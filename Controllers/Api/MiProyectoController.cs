@@ -21,9 +21,9 @@ namespace Parcial3Avisos.Controllers.Api
             var client = new MongoClient(CadenasConexion.Mongo_DB);
             var bd = client.GetDatabase("Escuela_Mia_Danna");
             var collection = bd.GetCollection<Equipo>("Equipo");
-            var list = collection.Find(FilterDefinition<Equipo>.Empty).ToList();
-
-           return Ok (list);
+            
+             var item = collection.Find(FilterDefinition<Equipo>.Empty).FirstOrDefault();
+            return Ok(item);
         }
     }
     
