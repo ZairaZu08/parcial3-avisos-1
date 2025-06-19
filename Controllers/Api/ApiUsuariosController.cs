@@ -15,8 +15,8 @@ public class ApiUsuariosController : ControllerBase
     private readonly IMongoCollection<Usuario> collection;
     public ApiUsuariosController()
     {
-        var client = new MongoClient(CadenaConexion.MONGO_DB);
-        var database = client.GetDatabase("Escuela_Zaira_Atala");
+        var client = new MongoClient(CadenasConexion.Mongo_DB);
+        var database = client.GetDatabase("Escuela_Mia_Danna");
         this.collection = database.GetCollection<Usuario>("Usuarios");
     }
 
